@@ -1,70 +1,78 @@
 {
-  "name": "@digitalbazaar/lru-memoize",
+  "name": "@interop/lru-memoize",
+  "description": "LRU Memoize -- a memoized wrapper around lru-cache.",
   "version": "4.0.1-0",
-  "description": "LRU Memoize",
-  "license": "BSD-3-Clause",
   "type": "module",
-  "exports": "./lib/index.js",
-  "files": [
-    "lib/**/*.js"
-  ],
   "scripts": {
-    "test": "npm run test-node",
-    "test-node": "cross-env NODE_ENV=test mocha --preserve-symlinks -t 30000 -A -R ${REPORTER:-spec} --require tests/test-mocha.js tests/*.spec.js",
-    "test-karma": "karma start karma.conf.cjs",
-    "coverage": "cross-env NODE_ENV=test c8 npm run test-node",
-    "coverage-ci": "cross-env NODE_ENV=test c8 --reporter=lcovonly --reporter=text-summary --reporter=text npm run test-node",
-    "coverage-report": "c8 report",
-    "lint": "eslint ."
+    "build": "pnpm run clear && tsc",
+    "clear": "rimraf dist/*",
+    "dev": "vite",
+    "fix": "eslint --fix src test && pnpm run format",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "lint": "eslint src test",
+    "prepare": "pnpm run build",
+    "rebuild": "pnpm run clear && pnpm run build",
+    "test": "pnpm run lint && pnpm run test-node && pnpm run test-browser",
+    "test-browser": "playwright test",
+    "test-node": "vitest run",
+    "test-coverage": "vitest run --coverage"
   },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "react-native": "./dist/index.js",
+      "import": "./dist/index.js"
+    }
+  },
+  "module": "dist/index.js",
+  "browser": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
   "dependencies": {
-    "lru-cache": "^11.1.0"
+    "lru-cache": "^11.5.0"
   },
   "devDependencies": {
-    "c8": "^10.1.3",
-    "chai": "^4.5.0",
-    "cross-env": "^7.0.3",
-    "delay": "^6.0.0",
-    "eslint": "^8.48.0",
-    "eslint-config-digitalbazaar": "^5.0.1",
-    "eslint-plugin-jsdoc": "^50.6.17",
-    "eslint-plugin-unicorn": "^56.0.1",
-    "karma": "^6.3.20",
-    "karma-chai": "^0.1.0",
-    "karma-chrome-launcher": "^3.1.1",
-    "karma-mocha": "^2.0.1",
-    "karma-mocha-reporter": "^2.2.5",
-    "karma-sourcemap-loader": "^0.4.0",
-    "karma-webpack": "^5.0.0",
-    "mocha": "^11.4.0",
-    "mocha-lcov-reporter": "^1.3.0",
-    "webpack": "^5.72.1"
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.60.0",
+    "@types/node": "^25.9.1",
+    "@vitest/coverage-v8": "^4.1.7",
+    "delay": "^7.0.0",
+    "eslint": "^10.4.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.6.0",
+    "prettier": "^3.8.3",
+    "rimraf": "^6.1.3",
+    "typescript": "^5.5.0",
+    "typescript-eslint": "^8.59.4",
+    "vite": "^8.0.14",
+    "vitest": "^4.1.7"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/digitalbazaar/lru-memoize"
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
   },
   "keywords": [
     "lru",
     "memoize"
   ],
-  "author": {
-    "name": "Digital Bazaar, Inc.",
-    "email": "support@digitalbazaar.com",
-    "url": "https://digitalbazaar.com/"
-  },
-  "bugs": {
-    "url": "https://github.com/digitalbazaar/lru-memoize/issues"
-  },
-  "homepage": "https://github.com/digitalbazaar/lru-memoize",
+  "packageManager": "pnpm@10.20.0",
   "engines": {
-    "node": ">=14"
+    "node": ">=24.0"
   },
-  "c8": {
-    "reporter": [
-      "lcov",
-      "text-summary",
-      "text"
-    ]
-  }
+  "author": {
+    "name": "Interop Alliance",
+    "url": "https://github.com/interop-alliance/"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/interop-alliance/lru-memoize.git"
+  },
+  "homepage": "https://github.com/interop-alliance/lru-memoize",
+  "bugs": "https://github.com/interop-alliance/lru-memoize/issues"
 }
