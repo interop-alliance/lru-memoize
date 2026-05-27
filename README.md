@@ -1,7 +1,7 @@
-# LRU-Memoize _(@digitalbazaar/lru-memoize)_
+# LRU-Memoize _(@interop/lru-memoize)_
 
-[![Node.js CI](https://github.com/digitalbazaar/lru-memoize/workflows/Node.js%20CI/badge.svg)](https://github.com/digitalbazaar/lru-memoize/actions?query=workflow%3A%22Node.js+CI%22)
-[![NPM Version](https://img.shields.io/npm/v/@digitalbazaar/lru-memoize.svg)](https://npm.im/@digitalbazaar/lru-memoize)
+[![Node.js CI](https://github.com/interop-alliance/lru-memoize/workflows/CI/badge.svg)](https://github.com/interop-alliance/lru-memoize/actions?query=workflow%3ACI)
+[![NPM Version](https://img.shields.io/npm/v/@interop/lru-memoize.svg)](https://npm.im/@interop/lru-memoize)
 
 > A Memoized wrapper around the JavaScript [`lru-cache`](https://www.npmjs.com/package/lru-cache) library.
 
@@ -26,9 +26,9 @@ which helps in high-concurrency use cases. (And in turn, it uses
 To install locally (for development):
 
 ```
-git clone https://github.com/digitalbazaar/lru-memoize.git
+git clone https://github.com/interop-alliance/lru-memoize.git
 cd lru-memoize
-npm install
+pnpm install
 ```
 
 ## Usage
@@ -36,7 +36,7 @@ npm install
 To import:
 
 ```js
-import {LruCache} from '@digitalbazaar/lru-memoize';
+import {LruCache} from '@interop/lru-memoize';
 ```
 
 The memoized `LruCache` constructor passes any options given to it through to
@@ -57,7 +57,7 @@ For example, say you have a function `fetchStatus()` that retrieves a result fro
 `delay()` wait). To cache the result of this function:
 
 ```js
-import {LruCache} from '@digitalbazaar/lru-memoize';
+import {LruCache} from '@interop/lru-memoize';
 
 // cache expiration/TTL: 5 seconds
 const myCache = new LruCache({ttl: 5000});
@@ -94,4 +94,6 @@ If editing the Readme, please conform to the
 [standard-readme](https://github.com/RichardLitt/standard-readme) specification.
 
 ## License
-* New BSD License (3-clause) © 2020-2023 Digital Bazaar
+
+BSD-3 License, Copyright (c) 2020-2026 Digital Bazaar.
+[MIT License](LICENSE.md), Copyright (c) 2026 Interop Alliance (conversion to TypeScript).

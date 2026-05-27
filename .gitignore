@@ -10,4 +10,7 @@ TAGS
 coverage
 dist
 node_modules
+package-lock.json
 reports
+playwright-report/
+test-results/

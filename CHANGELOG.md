@@ -1,4 +1,14 @@
-# @digitalbazaar/lru-memoize ChangeLog
+# @interop/lru-memoize ChangeLog
+
+## 4.0.1 -
+
+### Changed
+- **BREAKING**: Fork to `@interop/lru-memoize` from `@digitalbazaar/lru-memoize@4`.
+- Convert source to TypeScript.
+- Replace mocha/karma/chai/webpack toolchain with vitest (Node) and Playwright
+  (browser).
+- Switch package manager from npm to pnpm.
+- Require Node.js >=24.
 
 ## 4.0.0 - 2025-05-22
 
