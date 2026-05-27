@@ -1,6 +1,6 @@
 # @interop/lru-memoize ChangeLog
 
-## 4.0.1 -
+## 4.0.1 - 2026-05-26
 
 ### Changed
 - **BREAKING**: Fork to `@interop/lru-memoize` from `@digitalbazaar/lru-memoize@4`.

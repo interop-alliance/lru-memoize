@@ -1,7 +1,7 @@
 {
   "name": "@interop/lru-memoize",
   "description": "LRU Memoize -- a memoized wrapper around lru-cache.",
-  "version": "4.0.1-0",
+  "version": "4.0.1",
   "type": "module",
   "scripts": {
     "build": "pnpm run clear && tsc",

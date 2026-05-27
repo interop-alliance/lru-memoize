@@ -95,5 +95,5 @@ If editing the Readme, please conform to the
 
 ## License
 
-BSD-3 License, Copyright (c) 2020-2026 Digital Bazaar.
-[MIT License](LICENSE.md), Copyright (c) 2026 Interop Alliance (conversion to TypeScript).
+* BSD-3 License, Copyright (c) 2020-2026 Digital Bazaar.
+* [MIT License](LICENSE.md), Copyright (c) 2026 Interop Alliance (conversion to TypeScript).
