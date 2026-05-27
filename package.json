@@ -1,7 +1,7 @@
 {
   "name": "@interop/lru-memoize",
   "description": "LRU Memoize -- a memoized wrapper around lru-cache.",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "type": "module",
   "scripts": {
     "build": "pnpm run clear && tsc",
@@ -53,8 +53,7 @@
     "vitest": "^4.1.7"
   },
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "public"
   },
   "keywords": [
     "lru",
