@@ -1,5 +1,10 @@
 # @interop/lru-memoize ChangeLog
 
+## 4.0.3 - 2026-06-03
+
+### Fixed
+- Add a `default` export in `package.json`.
+
 ## 4.0.1-4.0.2 - 2026-05-26
 
 ### Changed
